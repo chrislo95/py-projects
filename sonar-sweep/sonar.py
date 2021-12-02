@@ -54,8 +54,6 @@ with open('input.txt') as f:
             tail_line_2 = number_2
             counter_3 = counter_3 + 1
     
-
-
 print(counter - 1)
 print(sum_counter - 1)
 
