@@ -11,6 +11,7 @@ forward_count = 0
 down_count = 0
 up_count = 0
 last_list_len = 0
+final_result = 0
 
 
 with open('input.txt') as f:
@@ -34,12 +35,21 @@ with open('input.txt') as f:
         last_list.extend(x)
 
     last_list_len = len(last_list)
+
     for x in range(last_list_len):
         if forward_check == last_list[x]:
-            forward_count = forward_count + int(last_list[x+1])
-            print(forward_count)
+            forward_count = forward_count + int(last_list[x + 1])
+        elif down_check == last_list[x]:
+            down_count = down_count + int(last_list[x + 1])
+        elif up_check == last_list[x]:
+            up_count = up_count + int(last_list[x + 1])
 
-    print(last_list)
+    """print(last_list)"""
+
+    final_result = down_count - up_count
+    final_result = final_result * forward_count
+
+    print(final_result)
 
 
 f.close()
