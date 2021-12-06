@@ -1,4 +1,5 @@
 from os import linesep
+from typing import final
 lol_number = 0
 number_list = []
 counter_2 = 0
@@ -10,8 +11,11 @@ down_check = "down"
 forward_count = 0
 down_count = 0
 up_count = 0
+aim_count = 0
+depth_count = 0
 last_list_len = 0
 final_result = 0
+final_depth = 0
 
 
 with open('input.txt') as f:
@@ -39,16 +43,26 @@ with open('input.txt') as f:
     for x in range(last_list_len):
         if forward_check == last_list[x]:
             forward_count = forward_count + int(last_list[x + 1])
+            depth_count = depth_count + (aim_count * forward_count)
         elif down_check == last_list[x]:
             down_count = down_count + int(last_list[x + 1])
+            aim_count = aim_count + int(last_list[x + 1])
         elif up_check == last_list[x]:
             up_count = up_count + int(last_list[x + 1])
+            if aim_count == 0:
+                break
+            aim_count = aim_count - int(last_list[x + 1])
 
     """print(last_list)"""
 
     final_result = down_count - up_count
+    print(aim_count)
+    print(forward_count)
+    print(depth_count)
+    final_depth = forward_count * depth_count
     final_result = final_result * forward_count
 
+    print(final_depth)
     print(final_result)
 
 
