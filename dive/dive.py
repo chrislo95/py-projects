@@ -43,14 +43,14 @@ with open('input.txt') as f:
     for x in range(last_list_len):
         if forward_check == last_list[x]:
             forward_count = forward_count + int(last_list[x + 1])
-            depth_count = depth_count + (aim_count * forward_count)
+            depth_count = depth_count + (aim_count * int(last_list[x + 1]))
+
         elif down_check == last_list[x]:
             down_count = down_count + int(last_list[x + 1])
             aim_count = aim_count + int(last_list[x + 1])
+
         elif up_check == last_list[x]:
             up_count = up_count + int(last_list[x + 1])
-            if aim_count == 0:
-                break
             aim_count = aim_count - int(last_list[x + 1])
 
     """print(last_list)"""
