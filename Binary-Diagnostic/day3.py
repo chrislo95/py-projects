@@ -57,8 +57,9 @@ with open('input.txt') as f:
     for x in range(12):
         if gamma_list[11 - x] == 0:
             continue
-        if bit_list[11 - x] == 1:
+        if gamma_list[11 - x] == 1:
             gamma_number = gamma_number + pow(2, x)
+            
 
     print(gamma_number)
     print(epsi_number)
