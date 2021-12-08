@@ -17,6 +17,7 @@ position_counter = 0
 
 
 
+
 with open('input.txt') as f:
     lines = f.readlines()
 
@@ -33,7 +34,8 @@ with open('input.txt') as f:
                 ones_counter += 1
             if new_list_2[x][0][y] == '0':
                 zeros_counter += 1
-                
+        if x == 1000:
+
 
     len_list_number = len(last_list)
     print(len_list_number)
