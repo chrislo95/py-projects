@@ -31,6 +31,13 @@ with open('input.txt') as f:
             if last_list[(13*y)+x] == '1':
                 
                 one_counter = one_counter + 1
+
+
+    for x in range(1000):
+        for y in range(len_list_number):
+            if len_list_number[y] == '\n':
+                break
+            
             
         
         if zero_counter > one_counter:
@@ -59,7 +66,6 @@ with open('input.txt') as f:
             continue
         if gamma_list[11 - x] == 1:
             gamma_number = gamma_number + pow(2, x)
-            
 
     print(gamma_number)
     print(epsi_number)
@@ -68,5 +74,6 @@ with open('input.txt') as f:
     print(final_number)
     print(bit_list)
     
+
 
 f.close()
