@@ -14,7 +14,8 @@ most_common_counter = 0
 ones_counter = 0
 zeros_counter = 0
 position_counter = 0
-
+ones_list = []
+zeros_list = []
 
 
 
@@ -31,14 +32,23 @@ with open('input.txt') as f:
             if new_list_2[x][0][y] == '\n':
                 break
             if new_list_2[x][0][y] == '1':
+                ones_list.append(new_list_2[x])
                 ones_counter += 1
             if new_list_2[x][0][y] == '0':
+                zeros_list.append(new_list_2[x])
                 zeros_counter += 1
+        
+        if ones_counter > zeros_counter or ones_counter == zeros_counter:
+            new_list_2 = ones_list
+        if zeros_counter > ones_counter:
+            new_list_2 = zeros_list
+
         if x == 1000:
+            break
 
 
     len_list_number = len(last_list)
-    print(len_list_number)
+
     
     for x in range(12):
         for y in range(len_list_number):
