@@ -11,7 +11,10 @@ gamma_number = 0
 epsi_number = 0
 least_common_counter = 0
 most_common_counter = 0
+ones_counter = 0
+zeros_counter = 0
 position_counter = 0
+
 
 
 with open('input.txt') as f:
@@ -19,6 +22,18 @@ with open('input.txt') as f:
 
     for x in lines:
         last_list.extend(x)
+
+    new_list_2 = [[x] for x in lines]
+
+    for x in range(1000):
+        for y in range(12):
+            if new_list_2[x][0][y] == '\n':
+                break
+            if new_list_2[x][0][y] == '1':
+                ones_counter += 1
+            if new_list_2[x][0][y] == '0':
+                zeros_counter += 1
+                
 
     len_list_number = len(last_list)
     print(len_list_number)
@@ -42,20 +57,6 @@ with open('input.txt') as f:
         print(one_counter)    
         zero_counter = 0
         one_counter = 0
-
-
-    for x in range(1000):
-        for y in range(len_list_number):
-            if len_list_number[y] == '\n':
-                break
-            
-            if last_list[y+position_counter] == '0':
-                least_common_counter = least_common_counter + 1
-
-            if last_list[y+position_counter] == '1':
-                most_common_counter = most_common_counter + 1
-
-        if least_common_counter > most_common_counter:
             
 
     for x in range(12):
