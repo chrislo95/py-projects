@@ -26,26 +26,34 @@ with open('input.txt') as f:
         last_list.extend(x)
 
     new_list_2 = [[x] for x in lines]
+    
+    
+    for x in range(12):
+        for y in range(len(new_list_2)):
+            
 
-    for x in range(1000):
-        for y in range(12):
-            if new_list_2[x][0][y] == '\n':
-                break
-            if new_list_2[x][0][y] == '1':
-                ones_list.append(new_list_2[x])
+            if new_list_2[y][0][x] == '1':
+                print(y,x)
+                ones_list.append(new_list_2[y])
                 ones_counter += 1
-            if new_list_2[x][0][y] == '0':
-                zeros_list.append(new_list_2[x])
+            if new_list_2[y][0][x] == '0':
+                zeros_list.append(new_list_2[y])
                 zeros_counter += 1
         
         if ones_counter > zeros_counter or ones_counter == zeros_counter:
             new_list_2 = ones_list
+            ones_list = []
         if zeros_counter > ones_counter:
             new_list_2 = zeros_list
+            zeros_list = []
+
+        ones_counter = 0
+        zeros_counter = 0
 
         if x == 1000:
             break
-
+    print(new_list_2)
+    print(len(new_list_2))
 
     len_list_number = len(last_list)
 
