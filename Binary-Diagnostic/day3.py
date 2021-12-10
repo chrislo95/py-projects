@@ -33,24 +33,29 @@ with open('input.txt') as f:
     new_list_3 = [[x] for x in lines]
     
     '''For loop for most common'''
-    for x in range(12):
-        for y in range(len(new_list_2)):
+    while len(new_list_2) > 1:
+        for x in range(12):
+            for y in range(len(new_list_2)):
 
-            if new_list_2[y][0][x] == '1':
-                ones_list.append(new_list_2[y])
-                ones_counter += 1
-            if new_list_2[y][0][x] == '0':
-                zeros_list.append(new_list_2[y])
-                zeros_counter += 1
+                if new_list_2[y][0][x] == '1':
+                    ones_list.append(new_list_2[y])
+                    ones_counter += 1
+                if new_list_2[y][0][x] == '0':
+                    zeros_list.append(new_list_2[y])
+                    zeros_counter += 1
 
-        if ones_counter > zeros_counter or ones_counter == zeros_counter:
-            new_list_2 = ones_list
-            ones_list = []
-        if zeros_counter > ones_counter:
-            new_list_2 = zeros_list
-            zeros_list = []
-        ones_counter = 0
-        zeros_counter = 0
+            if ones_counter > zeros_counter or ones_counter == zeros_counter:
+                new_list_2 = ones_list
+                ones_list = []
+            if zeros_counter > ones_counter:
+                new_list_2 = zeros_list
+                zeros_list = []
+            ones_counter = 0
+            zeros_counter = 0
+            
+        print(len(new_list_2))
+
+
 
     '''For loop for least '''
     for x in range(12):
@@ -62,7 +67,7 @@ with open('input.txt') as f:
                 zeros_list_least.append(new_list_3[y])
                 zeros_counter_least += 1
 
-        if ones_counter_least < zeros_counter_least or ones_counter_least == zeros_counter_least:
+        if ones_counter_least > zeros_counter_least or ones_counter_least == zeros_counter_least:
             new_list_3 = zeros_list_least
             zeros_list_least = []
         if zeros_counter_least > ones_counter_least:
@@ -77,6 +82,7 @@ with open('input.txt') as f:
     print(new_list_2)
     print(new_list_3)
     print(len(new_list_2))
+    print(len(new_list_3))
 
     len_list_number = len(last_list)
 
