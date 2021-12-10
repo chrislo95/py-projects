@@ -35,9 +35,12 @@ with open('input.txt') as f:
     '''For loop for most common'''
     while len(new_list_2) > 1:
         for x in range(12):
+            
             for y in range(len(new_list_2)):
-
+                
                 if new_list_2[y][0][x] == '1':
+                    print(len(new_list_2))
+                    print(ones_counter)
                     ones_list.append(new_list_2[y])
                     ones_counter += 1
                 if new_list_2[y][0][x] == '0':
@@ -53,8 +56,6 @@ with open('input.txt') as f:
             ones_counter = 0
             zeros_counter = 0
             
-        print(len(new_list_2))
-
 
 
     '''For loop for least '''
