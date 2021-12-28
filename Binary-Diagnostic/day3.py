@@ -37,7 +37,6 @@ with open('input.txt') as f:
         for x in range(12):
             
             for y in range(len(new_list_2)):
-                
                 if new_list_2[y][0][x] == '1':
                     print(len(new_list_2))
                     print(ones_counter)
@@ -55,7 +54,6 @@ with open('input.txt') as f:
                 zeros_list = []
             ones_counter = 0
             zeros_counter = 0
-            
 
 
     '''For loop for least '''
