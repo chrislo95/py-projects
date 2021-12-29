@@ -21,8 +21,7 @@ zeros_counter_least = 0
 ones_list_least = []
 zeros_list_least = []
 
-
-
+"""Open file"""
 with open('input.txt') as f:
     lines = f.readlines()
 
