@@ -130,7 +130,6 @@ with open('input.txt') as f:
     print(gamma_list)
     print(final_number)
     print(bit_list)
-    
 
 
 f.close()
